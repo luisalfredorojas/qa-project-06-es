@@ -15,6 +15,15 @@ def positive_assert(kit_name):
     # Comprueba si el código de estado es 201
     assert kit_response.status_code == 201
 
+    # CORRECCION para los casos positivos para validar que el campo name del cuerpo de la respuesta coincida con el campo name del cuerpo de la solicitud
+    kits_table_response = sender_stand_request.get_kits_table()
+
+    # CORRECCION
+    str_kit = kit_body["name"]
+
+    # CORRECCION
+    assert kits_table_response.text.count(str_kit) == 1
+
 # Función de prueba negativa para los casos en los que la solicitud devuelve un error relacionado con caracteres
 def negative_assert_symbol(kit_name):
 
@@ -54,9 +63,10 @@ def test_create_kit_1_letter_in_name_get_success_response():
 def test_create_kit_511_letter_in_name_get_success_response():
     positive_assert("AbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdAbcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabcdabC")
 
+#CORRECCION NEGATIVE ASSERT
 #400
 def test_create_kit_0_letter_in_name_get_success_response():
-    positive_assert("")
+    negative_assert_symbol("")
 
 #400
 def test_create_kit_512_letter_in_name_get_not_success_response():
@@ -74,9 +84,12 @@ def test_create_kit_space_letter_in_name_get_success_response():
 def test_create_kit_numbers_in_name_get_success_response():
     positive_assert("123")
 
+
+#CORRECCION PARAMETRO FALTANTE EN LLAMADO EN FUNCION
 #400
 def test_create_kit_no_parameter_in_name_get_not_success_response():
-    negative_assert_no_name()
+    kit_body = get_kit_body("")
+    negative_assert_no_name(kit_body)
 
 #400
 def test_create_kit_number_type_in_name_get_not_success_response():

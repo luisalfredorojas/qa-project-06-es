@@ -1,10 +1,11 @@
+
 headers = {
     "Content-Type": "application/json",
 }
 
 kit_headers = {
     "Content-Type": "application/json",
-    "Authorization": "Bearer fc9accc3-ef9e-4825-b088-2527aea38f2f"
+    "Authorization": "Bearer 1dea0639-bb50-431e-a4d6-f938d866df3b"
 }
 
 user_body = {
