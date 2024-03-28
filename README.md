@@ -29,3 +29,6 @@ Clona el repositorio con SSH.<br>
 Ahora tienes una copia local del proyecto y puedes abrir la carpeta del proyecto en tu computadora.<br>
 
 💡 Puedes utilizar PyCharm para trabajar en el proyecto localmente. Simplemente abre PyCharm y selecciona Archivo → Abrir y luego selecciona la carpeta qa-project-06 que clonaste en tu computadora.
+
+##Libreria Pytest y requests
+Asegurate de instalar este par de librerias para que el proyecto compile de la forma correcta.
