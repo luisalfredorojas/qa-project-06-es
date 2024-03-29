@@ -10,9 +10,12 @@ def create_user_post(user_body):
 
 #CORRECCION OBTENER EL TOKEN Y AGREGARLO EN LOS HEADERS
 def post_create_kit(kit_name):
+    response_auth_token = create_user_post(kit_name)
+    auth_token = response_auth_token.json()["authToken"]
+    headers_token = {"Autorization": "Bearer " + auth_token}
     return requests.post(configuration.URL_SERVICE + configuration.KITS_PATH,
                          json=kit_name,
-                         headers=data.kit_headers)
+                         headers=headers_token)
 
 
 def get_kits_table():

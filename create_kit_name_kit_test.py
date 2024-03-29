@@ -12,6 +12,10 @@ def positive_assert(kit_name):
 
     kit_response = sender_stand_request.post_create_kit(kit_body)
 
+    response_auth_token = sender_stand_request.create_user_post(kit_name)
+    auth_token = response_auth_token.json()["authToken"]
+    headers_token = {"Autorization": "Bearer " + auth_token}
+
     # Comprueba si el código de estado es 201
     assert kit_response.status_code == 201
 
