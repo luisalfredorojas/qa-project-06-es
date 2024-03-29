@@ -8,7 +8,6 @@ def get_kit_body(kit_name):
     current_body["name"] = kit_name
     return current_body
 
-
 def positive_assert(kit_name):
     kit_body = get_kit_body(kit_name)
 
