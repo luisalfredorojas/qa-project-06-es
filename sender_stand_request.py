@@ -21,5 +21,4 @@ def post_create_kit(kit_name):
 
 def get_kits_table(id):
     kits_with_id = configuration.KITS_TABLE + "?cardId=" + id
-    return requests.get(configuration.URL_SERVICE + kits_with_id
-                        )
+    return requests.get(configuration.URL_SERVICE + kits_with_id)
