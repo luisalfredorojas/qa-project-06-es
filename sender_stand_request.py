@@ -23,7 +23,3 @@ def get_kits_table(id):
     kits_with_id = configuration.KITS_TABLE + "?cardId=" + id
     return requests.get(configuration.URL_SERVICE + kits_with_id
                         )
-
-response = get_kits_table("2")
-print(response.status_code)
-print(response.json())
