@@ -10,17 +10,12 @@ def get_kit_body(kit_name):
 
 
 def positive_assert(kit_name):
-
     kit_body = get_kit_body(kit_name)
 
     kit_response = sender_stand_request.post_create_kit(kit_body)
 
     # Comprueba si el código de estado es 201
     assert kit_response.status_code == 201
-
-
-    kit_id = str_kit = kit_body["id"]
-
 
 # Función de prueba negativa para los casos en los que la solicitud devuelve un error relacionado con caracteres
 def negative_assert_symbol(kit_name):
