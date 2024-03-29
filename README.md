@@ -33,6 +33,7 @@ Ahora tienes una copia local del proyecto y puedes abrir la carpeta del proyecto
 
 ## Paso 4: Libreria Pytest y requests
 Asegurate de instalar este par de librerias para que el proyecto compile de la forma correcta.
+Ingresa en Python packages y busca requests y purest para poder instalarlos
 
 ##Paso 5: Asegurate que pycharm reconozca las funciona con "test"
 
