@@ -35,7 +35,6 @@ def negative_assert_symbol(kit_name):
                                          "Los nombres solo pueden contener caracteres latinos,  "\
                                          "los nombres deben tener al menos 2 caracteres y no más de 15 caracteres"
 
-
 def negative_assert_no_name(kit_body):
     # El resultado se guarda en la variable response
     response = sender_stand_request.post_create_kit(kit_body)
