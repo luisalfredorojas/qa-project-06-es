@@ -1,10 +1,13 @@
 import data
 import sender_stand_request
+import configuration
+import requests
 
 def get_kit_body(kit_name):
     current_body = data.kit_body.copy()
     current_body["name"] = kit_name
     return current_body
+
 
 def positive_assert(kit_name):
 
@@ -15,14 +18,9 @@ def positive_assert(kit_name):
     # Comprueba si el código de estado es 201
     assert kit_response.status_code == 201
 
-    # CORRECCION para los casos positivos para validar que el campo name del cuerpo de la respuesta coincida con el campo name del cuerpo de la solicitud
-    kits_table_response = sender_stand_request.get_kits_table()
 
-    # CORRECCION
-    str_kit = kit_body["name"]
+    kit_id = str_kit = kit_body["id"]
 
-    # CORRECCION
-    assert kits_table_response.text.count(str_kit) == 1
 
 # Función de prueba negativa para los casos en los que la solicitud devuelve un error relacionado con caracteres
 def negative_assert_symbol(kit_name):

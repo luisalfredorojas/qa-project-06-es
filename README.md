@@ -11,6 +11,7 @@ El primer paso es enlazar tu cuenta de GitHub a TripleTen. Para ello, haz clic e
 <br>
 ## Paso 2. Clona el repositorio en tu computadora<br>
 Una vez que hayas vinculado tu cuenta de TripleTen con GitHub, se creará un repositorio automáticamente. El nombre del repositorio será qa-project-06-es.<br>
+Asegurate de crier otra rama y trabajes localmente en tu computadora<br>
 
 Ve a GitHub y clona el nuevo repositorio en tu computadora local, siguiendo estos pasos:<br>
 
@@ -30,5 +31,8 @@ Ahora tienes una copia local del proyecto y puedes abrir la carpeta del proyecto
 
 💡 Puedes utilizar PyCharm para trabajar en el proyecto localmente. Simplemente abre PyCharm y selecciona Archivo → Abrir y luego selecciona la carpeta qa-project-06 que clonaste en tu computadora.
 
-##Libreria Pytest y requests
+## Paso 4: Libreria Pytest y requests
 Asegurate de instalar este par de librerias para que el proyecto compile de la forma correcta.
+
+##Paso 5: Asegurate que pycharm reconozca las funciona con "test"
+
